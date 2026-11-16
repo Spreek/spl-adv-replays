@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPL IV ADV OU Replays</title>
+<style>
+  :root {
+    --bg: #f4f6f8; --panel: #ffffff; --ink: #1d2733; --muted: #5d6b79; --line: #d4dbe2;
+    --accent: #2a5f8f; --accent-bg: #e3eef8;
+  }
+  body.dark {
+    --bg: #15191e; --panel: #1d232a; --ink: #e3e8ee; --muted: #9aa7b4; --line: #333d48;
+    --accent: #8cbcea; --accent-bg: #23364a;
+  }
+  html, body { margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 13px/1.45 Verdana, Helvetica, Arial, sans-serif; }
+  .layout { display: flex; align-items: flex-start; }
+  nav.games { width: 310px; flex: none; height: 100vh; overflow-y: auto; position: sticky; top: 0;
+              background: var(--panel); border-right: 1px solid var(--line); box-sizing: border-box; }
+  nav.games header { padding: 14px 14px 8px; border-bottom: 1px solid var(--line); }
+  nav.games h1 { font-size: 16px; margin: 0 0 4px; }
+  nav.games header p { margin: 0; color: var(--muted); font-size: 11px; }
+  nav.games header p.seasons { margin-top: 6px; font-size: 12px; color: var(--ink); }
+  nav.games header p.seasons a { color: var(--accent); }
+  .filter { margin-top: 8px; width: 100%; box-sizing: border-box; padding: 5px 7px; font: inherit;
+            border: 1px solid var(--line); border-radius: 4px; background: var(--bg); color: var(--ink); }
+  .week { padding: 4px 0 6px; }
+  .week h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+             margin: 8px 14px 4px; }
+  .game { display: block; width: 100%; text-align: left; border: 0; background: none; color: inherit;
+          font: inherit; padding: 5px 14px 6px; cursor: pointer; border-left: 3px solid transparent; }
+  .game:hover { background: var(--accent-bg); }
+  .game.sel { background: var(--accent-bg); border-left-color: var(--accent); }
+  .game .t { display: block; font-weight: bold; font-size: 12px; overflow-wrap: anywhere; }
+  .nolog { padding: 4px 14px 6px; color: var(--muted); font-size: 11px; }
+  main { flex: 1; min-width: 0; padding: 14px 18px 40px; }
+  #info h2 { font-size: 17px; margin: 0 0 3px; overflow-wrap: anywhere; }
+  #info .meta { color: var(--muted); font-size: 12px; margin: 0 0 4px; }
+  #info .meta a { color: var(--accent); }
+  #info .nav { margin: 6px 0 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+  #info .nav button { font: inherit; font-size: 12px; padding: 3px 9px; cursor: pointer; border-radius: 4px;
+                      border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+  #info .nav button:disabled { opacity: .45; cursor: default; }
+  .wrapper.replay-wrapper { max-width: 1180px; margin: 0; }
+  @media (max-width: 900px) {
+    .layout { display: block; }
+    nav.games { width: auto; height: auto; max-height: 45vh; position: static; border-right: 0;
+                border-bottom: 1px solid var(--line); }
+    main { padding: 12px 16px 40px; }
+  }
+</style>
+<script type="application/json" id="spl-games">[{"id": "f8Cmeicx", "section": "Week 3", "title": "DracoMalfoy vs. Sir", "players": ["#pkmn cup champ sir", "DracoMalfoy"], "pov": null, "turns": 53, "result": "win", "winner": "#pkmn cup champ sir", "teams": [[{"nick": "bastard 2.0", "species": "Snorlax"}, {"nick": "Dreidel", "species": "Claydol"}, {"nick": "Rascals", "species": "Magneton"}, {"nick": "Hoodlum", "species": "Jirachi"}, {"nick": "Boy Band", "species": "Dugtrio"}, {"nick": "Veggies", "species": "Celebi"}], [{"nick": "Tyranitar", "species": "Tyranitar"}, {"nick": "Skarmory", "species": "Skarmory"}, {"nick": "Gengar", "species": "Gengar"}, {"nick": "Metagross", "species": "Metagross"}, {"nick": "Zapdos", "species": "Zapdos"}, {"nick": "Milotic", "species": "Milotic"}]], "log": "|gametype|singles\n|player|p1|#pkmn cup champ sir|lucas|\n|player|p2|DracoMalfoy|dawn|\n|teamsize|p1|6\n|teamsize|p2|6\n|gen|3\n|tier|[Gen 3] OU\n|rule|Sleep Clause Mod: Limit one foe put to sleep\n|rule|Freeze Clause Mod: Limit one foe frozen\n|rule|Species Clause: Limit one of each Pokémon\n|rule|Self-KO Clause: If both Pokémon faint from a self-KO move, the user loses\n|\n|start\n|switch|p1a: bastard 2.0|Snorlax|100/100\n|switch|p2a: Tyranitar|Tyranitar|100/100\n|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: Tyranitar\n|\n|turn|1\n|-singleturn|p2a: Tyranitar|move: Focus Punch\n|switch|p1a: Dreidel|Claydol|100/100\n|move|p2a: Tyranitar|Focus Punch|p1a: Dreidel\n|-resisted|p1a: Dreidel\n|-damage|p1a: Dreidel|70/100\n|-weather|Sandstorm|[upkeep]\n|-heal|p1a: Dreidel|76/100|[from] item: Leftovers\n|\n|turn|2\n|switch|p2a: Skarmory|Skarmory|100/100\n|move|p1a: Dreidel|Earthquake|p2a: Skarmory\n|-immune|p2a: Skarmory\n|-weather|Sandstorm|[upkeep]\n|-heal|p1a: Dreidel|82/100|[from] item: Leftovers\n|\n|turn|3\n|switch|p1a: Rascals|Magneton|100/100\n|move|p2a: Skarmory|Whirlwind|p1a: Rascals\n|drag|p1a: Hoodlum|Jirachi|100/100\n|-weather|Sandstorm|[upkeep]\n|\n|turn|4\n|move|p1a: Hoodlum|Reflect|p1a: Hoodlum\n|-sidestart|p1: #pkmn cup champ sir|Reflect\n|move|p2a: Skarmory|Spikes|p1a: Hoodlum\n|-sidestart|p1: #pkmn cup champ sir|Spikes\n|-weather|Sandstorm|[upkeep]\n|\n|turn|5\n|switch|p2a: Tyranitar|Tyranitar|100/100\n|move|p1a: Hoodlum|Psychic|p2a: Tyranitar\n|-immune|p2a: Tyranitar\n|-weather|Sandstorm|[upkeep]\n|\n|turn|6\n|switch|p1a: Boy Band|Dugtrio|100/100\n|-damage|p1a: Boy Band|88/100|[from] Spikes\n|move|p2a: Tyranitar|Hidden Power|p1a: Boy Band\n|-damage|p1a: Boy Band|32/100\n|-weather|Sandstorm|[upkeep]\n|\n|turn|7\n|move|p1a: Boy Band|Earthquake|p2a: Tyranitar\n|-supereffective|p2a: Tyranitar\n|-damage|p2a: Tyranitar|5/100\n|move|p2a: Tyranitar|Hidden Power|p1a: Boy Band\n|-damage|p1a: Boy Band|0 fnt\n|faint|p1a: Boy Band\n|switch|p1a: bastard 2.0|Snorlax|100/100\n|-damage|p1a: bastard 2.0|88/100|[from] Spikes\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|81/100|[from] Sandstorm\n|-heal|p1a: bastard 2.0|88/100|[from] item: Leftovers\n|\n|turn|8\n|switch|p2a: Gengar|Gengar|100/100\n|move|p1a: bastard 2.0|Body Slam|p2a: Gengar\n|-immune|p2a: Gengar\n|-sideend|p1: #pkmn cup champ sir|Reflect\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Gengar|94/100|[from] Sandstorm\n|-damage|p1a: bastard 2.0|81/100|[from] Sandstorm\n|-heal|p2a: Gengar|100/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|88/100|[from] item: Leftovers\n|\n|turn|9\n|move|p2a: Gengar|Will-O-Wisp|p1a: bastard 2.0\n|-status|p1a: bastard 2.0|brn\n|move|p1a: bastard 2.0|Shadow Ball|p2a: Gengar\n|-supereffective|p2a: Gengar\n|-damage|p2a: Gengar|67/100\n|-unboost|p2a: Gengar|spd|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Gengar|61/100|[from] Sandstorm\n|-damage|p1a: bastard 2.0|81/100 brn|[from] Sandstorm\n|-heal|p2a: Gengar|67/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|88/100 brn|[from] item: Leftovers\n|-damage|p1a: bastard 2.0|75/100 brn|[from] brn\n|\n|turn|10\n|switch|p2a: Metagross|Metagross|100/100\n|move|p1a: bastard 2.0|Shadow Ball|p2a: Metagross\n|-damage|p2a: Metagross|91/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|69/100 brn|[from] Sandstorm\n|-heal|p2a: Metagross|97/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|75/100 brn|[from] item: Leftovers\n|-damage|p1a: bastard 2.0|62/100 brn|[from] brn\n|\n|turn|11\n|switch|p2a: Gengar|Gengar|67/100\n|switch|p1a: Veggies|Celebi|100/100\n|-damage|p1a: Veggies|88/100|[from] Spikes\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Gengar|61/100|[from] Sandstorm\n|-damage|p1a: Veggies|81/100|[from] Sandstorm\n|-heal|p2a: Gengar|67/100|[from] item: Leftovers\n|-heal|p1a: Veggies|88/100|[from] item: Leftovers\n|\n|turn|12\n|switch|p2a: Zapdos|Zapdos|100/100\n|-ability|p2a: Zapdos|Pressure\n|move|p1a: Veggies|Leech Seed|p2a: Zapdos\n|-start|p2a: Zapdos|move: Leech Seed\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Zapdos|94/100|[from] Sandstorm\n|-damage|p1a: Veggies|81/100|[from] Sandstorm\n|-heal|p2a: Zapdos|100/100|[from] item: Leftovers\n|-damage|p2a: Zapdos|88/100|[from] Leech Seed|[of] p1a: Veggies\n|-heal|p1a: Veggies|93/100|[silent]\n|-heal|p1a: Veggies|99/100|[from] item: Leftovers\n|\n|turn|13\n|switch|p2a: Metagross|Metagross|97/100\n|move|p1a: Veggies|Psychic|p2a: Metagross\n|-resisted|p2a: Metagross\n|-damage|p2a: Metagross|87/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|93/100|[from] Sandstorm\n|-heal|p1a: Veggies|99/100|[from] item: Leftovers\n|-heal|p2a: Metagross|94/100|[from] item: Leftovers\n|\n|turn|14\n|switch|p2a: Zapdos|Zapdos|88/100\n|-ability|p2a: Zapdos|Pressure\n|move|p1a: Veggies|Leech Seed|p2a: Zapdos\n|-start|p2a: Zapdos|move: Leech Seed\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Zapdos|81/100|[from] Sandstorm\n|-damage|p1a: Veggies|93/100|[from] Sandstorm\n|-heal|p2a: Zapdos|88/100|[from] item: Leftovers\n|-damage|p2a: Zapdos|75/100|[from] Leech Seed|[of] p1a: Veggies\n|-heal|p1a: Veggies|100/100|[silent]\n|\n|turn|15\n|switch|p2a: Metagross|Metagross|94/100\n|move|p1a: Veggies|Calm Mind|p1a: Veggies\n|-boost|p1a: Veggies|spa|1\n|-boost|p1a: Veggies|spd|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|94/100|[from] Sandstorm\n|-heal|p1a: Veggies|100/100|[from] item: Leftovers\n|-heal|p2a: Metagross|100/100|[from] item: Leftovers\n|\n|turn|16\n|move|p1a: Veggies|Psychic|p2a: Metagross\n|-resisted|p2a: Metagross\n|-damage|p2a: Metagross|87/100\n|move|p2a: Metagross|Meteor Mash|p1a: Veggies\n|-damage|p1a: Veggies|69/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|63/100|[from] Sandstorm\n|-heal|p1a: Veggies|69/100|[from] item: Leftovers\n|-heal|p2a: Metagross|93/100|[from] item: Leftovers\n|\n|turn|17\n|move|p1a: Veggies|Leech Seed|p2a: Metagross\n|-start|p2a: Metagross|move: Leech Seed\n|move|p2a: Metagross|Meteor Mash|p1a: Veggies\n|-damage|p1a: Veggies|35/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|29/100|[from] Sandstorm\n|-heal|p1a: Veggies|35/100|[from] item: Leftovers\n|-heal|p2a: Metagross|99/100|[from] item: Leftovers\n|-damage|p2a: Metagross|87/100|[from] Leech Seed|[of] p1a: Veggies\n|-heal|p1a: Veggies|46/100|[silent]\n|\n|turn|18\n|switch|p2a: Zapdos|Zapdos|75/100\n|-ability|p2a: Zapdos|Pressure\n|move|p1a: Veggies|Psychic|p2a: Zapdos\n|-damage|p2a: Zapdos|40/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Zapdos|34/100|[from] Sandstorm\n|-damage|p1a: Veggies|40/100|[from] Sandstorm\n|-heal|p2a: Zapdos|40/100|[from] item: Leftovers\n|-heal|p1a: Veggies|46/100|[from] item: Leftovers\n|\n|turn|19\n|move|p2a: Zapdos|Rest|p2a: Zapdos\n|-status|p2a: Zapdos|slp|[from] move: Rest\n|-heal|p2a: Zapdos|100/100 slp|[silent]\n|move|p1a: Veggies|Leech Seed|p2a: Zapdos\n|-start|p2a: Zapdos|move: Leech Seed\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Zapdos|94/100 slp|[from] Sandstorm\n|-damage|p1a: Veggies|40/100|[from] Sandstorm\n|-heal|p2a: Zapdos|100/100 slp|[from] item: Leftovers\n|-damage|p2a: Zapdos|88/100 slp|[from] Leech Seed|[of] p1a: Veggies\n|-heal|p1a: Veggies|52/100|[silent]\n|-heal|p1a: Veggies|58/100|[from] item: Leftovers\n|\n|turn|20\n|switch|p2a: Skarmory|Skarmory|100/100\n|move|p1a: Veggies|Psychic|p2a: Skarmory\n|-resisted|p2a: Skarmory\n|-damage|p2a: Skarmory|69/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|52/100|[from] Sandstorm\n|-heal|p1a: Veggies|58/100|[from] item: Leftovers\n|-heal|p2a: Skarmory|75/100|[from] item: Leftovers\n|\n|turn|21\n|switch|p1a: Rascals|Magneton|100/100\n|-damage|p1a: Rascals|88/100|[from] Spikes\n|move|p2a: Skarmory|Spikes|p1a: Rascals\n|-sidestart|p1: #pkmn cup champ sir|Spikes\n|-weather|Sandstorm|[upkeep]\n|-heal|p2a: Skarmory|82/100|[from] item: Leftovers\n|\n|turn|22\n|move|p1a: Rascals|Thunderbolt|p2a: Skarmory\n|-supereffective|p2a: Skarmory\n|-damage|p2a: Skarmory|0 fnt\n|faint|p2a: Skarmory\n|switch|p2a: Metagross|Metagross|87/100\n|-weather|Sandstorm|[upkeep]\n|-heal|p2a: Metagross|93/100|[from] item: Leftovers\n|\n|turn|23\n|switch|p1a: Veggies|Celebi|58/100\n|-damage|p1a: Veggies|41/100|[from] Spikes\n|move|p2a: Metagross|Earthquake|p1a: Veggies\n|-resisted|p1a: Veggies\n|-damage|p1a: Veggies|30/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|24/100|[from] Sandstorm\n|-heal|p1a: Veggies|30/100|[from] item: Leftovers\n|-heal|p2a: Metagross|99/100|[from] item: Leftovers\n|\n|turn|24\n|move|p1a: Veggies|Recover|p1a: Veggies\n|-heal|p1a: Veggies|80/100\n|move|p2a: Metagross|Meteor Mash|p1a: Veggies\n|-damage|p1a: Veggies|46/100\n|-boost|p2a: Metagross|atk|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|40/100|[from] Sandstorm\n|-heal|p1a: Veggies|46/100|[from] item: Leftovers\n|-heal|p2a: Metagross|100/100|[from] item: Leftovers\n|\n|turn|25\n|move|p1a: Veggies|Recover|p1a: Veggies\n|-heal|p1a: Veggies|96/100\n|move|p2a: Metagross|Meteor Mash|p1a: Veggies|[miss]\n|-miss|p2a: Metagross|p1a: Veggies\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|90/100|[from] Sandstorm\n|-heal|p1a: Veggies|96/100|[from] item: Leftovers\n|\n|turn|26\n|move|p1a: Veggies|Leech Seed|p2a: Metagross\n|-start|p2a: Metagross|move: Leech Seed\n|move|p2a: Metagross|Meteor Mash|p1a: Veggies\n|-damage|p1a: Veggies|50/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|44/100|[from] Sandstorm\n|-heal|p1a: Veggies|50/100|[from] item: Leftovers\n|-damage|p2a: Metagross|88/100|[from] Leech Seed|[of] p1a: Veggies\n|-heal|p1a: Veggies|62/100|[silent]\n|\n|turn|27\n|switch|p2a: Tyranitar|Tyranitar|5/100\n|move|p1a: Veggies|Recover|p1a: Veggies\n|-heal|p1a: Veggies|100/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Veggies|94/100|[from] Sandstorm\n|-heal|p1a: Veggies|100/100|[from] item: Leftovers\n|\n|turn|28\n|move|p1a: Veggies|Leech Seed|p2a: Tyranitar\n|-start|p2a: Tyranitar|move: Leech Seed\n|move|p2a: Tyranitar|Hidden Power|p1a: Veggies\n|-supereffective|p1a: Veggies\n|-damage|p1a: Veggies|0 fnt\n|faint|p1a: Veggies\n|switch|p1a: Dreidel|Claydol|82/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Tyranitar|0 fnt|[from] Leech Seed|[of] p1a: Dreidel\n|-heal|p1a: Dreidel|89/100|[silent]\n|faint|p2a: Tyranitar\n|-heal|p1a: Dreidel|95/100|[from] item: Leftovers\n|switch|p2a: Milotic|Milotic|100/100\n|\n|turn|29\n|move|p2a: Milotic|Surf|p1a: Dreidel\n|-supereffective|p1a: Dreidel\n|-damage|p1a: Dreidel|35/100\n|move|p1a: Dreidel|Rapid Spin|p2a: Milotic\n|-damage|p2a: Milotic|97/100\n|-sideend|p1: #pkmn cup champ sir|Spikes|[from] move: Rapid Spin|[of] p1a: Dreidel\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|-heal|p1a: Dreidel|41/100|[from] item: Leftovers\n|\n|turn|30\n|switch|p1a: Hoodlum|Jirachi|100/100\n|move|p2a: Milotic|Surf|p1a: Hoodlum\n|-damage|p1a: Hoodlum|74/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-heal|p1a: Hoodlum|80/100|[from] item: Leftovers\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|\n|turn|31\n|move|p1a: Hoodlum|Reflect|p1a: Hoodlum\n|-sidestart|p1: #pkmn cup champ sir|Reflect\n|move|p2a: Milotic|Surf|p1a: Hoodlum\n|-damage|p1a: Hoodlum|53/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-heal|p1a: Hoodlum|60/100|[from] item: Leftovers\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|\n|turn|32\n|move|p1a: Hoodlum|Wish|p1a: Hoodlum\n|move|p2a: Milotic|Surf|p1a: Hoodlum\n|-damage|p1a: Hoodlum|32/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-heal|p1a: Hoodlum|39/100|[from] item: Leftovers\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|\n|turn|33\n|switch|p1a: bastard 2.0|Snorlax|62/100 brn\n|switch|p2a: Metagross|Metagross|88/100\n|-heal|p1a: bastard 2.0|100/100 brn|[from] move: Wish|[wisher] Hoodlum\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|94/100 brn|[from] Sandstorm\n|-heal|p2a: Metagross|94/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|100/100 brn|[from] item: Leftovers\n|-damage|p1a: bastard 2.0|88/100 brn|[from] brn\n|\n|turn|34\n|switch|p2a: Milotic|Milotic|97/100\n|move|p1a: bastard 2.0|Curse|p2a: Milotic\n|-boost|p1a: bastard 2.0|atk|1\n|-boost|p1a: bastard 2.0|def|1\n|-unboost|p1a: bastard 2.0|spe|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-damage|p1a: bastard 2.0|81/100 brn|[from] Sandstorm\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|88/100 brn|[from] item: Leftovers\n|-damage|p1a: bastard 2.0|75/100 brn|[from] brn\n|\n|turn|35\n|move|p2a: Milotic|Surf|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|59/100 brn\n|move|p1a: bastard 2.0|Curse|p2a: Milotic\n|-boost|p1a: bastard 2.0|atk|1\n|-boost|p1a: bastard 2.0|def|1\n|-unboost|p1a: bastard 2.0|spe|1\n|-sideend|p1: #pkmn cup champ sir|Reflect\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-damage|p1a: bastard 2.0|53/100 brn|[from] Sandstorm\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|59/100 brn|[from] item: Leftovers\n|-damage|p1a: bastard 2.0|46/100 brn|[from] brn\n|\n|turn|36\n|switch|p2a: Metagross|Metagross|94/100\n|move|p1a: bastard 2.0|Rest|p1a: bastard 2.0\n|-status|p1a: bastard 2.0|slp|[from] move: Rest\n|-heal|p1a: bastard 2.0|100/100 slp|[silent]\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|94/100 slp|[from] Sandstorm\n|-heal|p2a: Metagross|100/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|100/100 slp|[from] item: Leftovers\n|\n|turn|37\n|move|p2a: Metagross|Meteor Mash|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|79/100 slp\n|cant|p1a: bastard 2.0|slp\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|73/100 slp|[from] Sandstorm\n|-heal|p2a: Metagross|100/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|79/100 slp|[from] item: Leftovers\n|\n|turn|38\n|move|p2a: Metagross|Meteor Mash|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|58/100 slp\n|cant|p1a: bastard 2.0|slp\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|52/100 slp|[from] Sandstorm\n|-heal|p1a: bastard 2.0|58/100 slp|[from] item: Leftovers\n|\n|turn|39\n|move|p2a: Metagross|Meteor Mash|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|40/100 slp\n|-curestatus|p1a: bastard 2.0|slp|[msg]\n|move|p1a: bastard 2.0|Curse|p2a: Metagross\n|-boost|p1a: bastard 2.0|atk|1\n|-boost|p1a: bastard 2.0|def|1\n|-unboost|p1a: bastard 2.0|spe|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|34/100|[from] Sandstorm\n|-heal|p1a: bastard 2.0|40/100|[from] item: Leftovers\n|\n|turn|40\n|move|p2a: Metagross|Meteor Mash|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|25/100\n|move|p1a: bastard 2.0|Rest|p1a: bastard 2.0\n|-status|p1a: bastard 2.0|slp|[from] move: Rest\n|-heal|p1a: bastard 2.0|100/100 slp|[silent]\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|94/100 slp|[from] Sandstorm\n|-heal|p1a: bastard 2.0|100/100 slp|[from] item: Leftovers\n|\n|turn|41\n|move|p2a: Metagross|Meteor Mash|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|85/100 slp\n|cant|p1a: bastard 2.0|slp\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|79/100 slp|[from] Sandstorm\n|-heal|p1a: bastard 2.0|85/100 slp|[from] item: Leftovers\n|\n|turn|42\n|move|p2a: Metagross|Meteor Mash|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|69/100 slp\n|cant|p1a: bastard 2.0|slp\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: bastard 2.0|63/100 slp|[from] Sandstorm\n|-heal|p1a: bastard 2.0|69/100 slp|[from] item: Leftovers\n|\n|turn|43\n|move|p2a: Metagross|Explosion|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|18/100 slp\n|faint|p2a: Metagross\n|switch|p2a: Milotic|Milotic|97/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-damage|p1a: bastard 2.0|12/100 slp|[from] Sandstorm\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|-heal|p1a: bastard 2.0|18/100 slp|[from] item: Leftovers\n|\n|turn|44\n|move|p2a: Milotic|Surf|p1a: bastard 2.0\n|-damage|p1a: bastard 2.0|0 fnt\n|faint|p1a: bastard 2.0\n|switch|p1a: Hoodlum|Jirachi|39/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-heal|p1a: Hoodlum|45/100|[from] item: Leftovers\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|\n|turn|45\n|switch|p1a: Dreidel|Claydol|41/100\n|move|p2a: Milotic|Surf|p1a: Dreidel\n|-supereffective|p1a: Dreidel\n|-damage|p1a: Dreidel|0 fnt\n|faint|p1a: Dreidel\n|switch|p1a: Hoodlum|Jirachi|45/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-heal|p1a: Hoodlum|51/100|[from] item: Leftovers\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|\n|turn|46\n|switch|p1a: Rascals|Magneton|88/100\n|switch|p2a: Gengar|Gengar|67/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Gengar|61/100|[from] Sandstorm\n|-heal|p2a: Gengar|67/100|[from] item: Leftovers\n|\n|turn|47\n|switch|p2a: Zapdos|Zapdos|88/100 slp\n|-ability|p2a: Zapdos|Pressure\n|move|p1a: Rascals|Thunderbolt|p2a: Zapdos\n|-damage|p2a: Zapdos|54/100 slp\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Zapdos|47/100 slp|[from] Sandstorm\n|-heal|p2a: Zapdos|54/100 slp|[from] item: Leftovers\n|\n|turn|48\n|move|p1a: Rascals|Hidden Power|p2a: Zapdos\n|-supereffective|p2a: Zapdos\n|-damage|p2a: Zapdos|20/100 slp\n|cant|p2a: Zapdos|slp\n|move|p2a: Zapdos|Sleep Talk|p2a: Zapdos\n|move|p2a: Zapdos|Thunderbolt|p1a: Rascals\n|-resisted|p1a: Rascals\n|-damage|p1a: Rascals|50/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Zapdos|13/100 slp|[from] Sandstorm\n|-heal|p2a: Zapdos|20/100 slp|[from] item: Leftovers\n|\n|turn|49\n|move|p1a: Rascals|Thunderbolt|p2a: Zapdos\n|-damage|p2a: Zapdos|0 fnt\n|faint|p2a: Zapdos\n|switch|p2a: Milotic|Milotic|97/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Milotic|91/100|[from] Sandstorm\n|-heal|p2a: Milotic|97/100|[from] item: Leftovers\n|\n|turn|50\n|move|p1a: Rascals|Thunderbolt|p2a: Milotic\n|-supereffective|p2a: Milotic\n|-crit|p2a: Milotic\n|-damage|p2a: Milotic|0 fnt\n|faint|p2a: Milotic\n|switch|p2a: Gengar|Gengar|67/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Gengar|61/100|[from] Sandstorm\n|-heal|p2a: Gengar|67/100|[from] item: Leftovers\n|\n|turn|51\n|move|p1a: Rascals|Endure|p1a: Rascals\n|-singleturn|p1a: Rascals|move: Endure\n|move|p2a: Gengar|Ice Punch|p1a: Rascals\n|-resisted|p1a: Rascals\n|-damage|p1a: Rascals|30/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Gengar|61/100|[from] Sandstorm\n|-heal|p2a: Gengar|67/100|[from] item: Leftovers\n|\n|turn|52\n|move|p2a: Gengar|Thunderbolt|p1a: Rascals\n|-resisted|p1a: Rascals\n|-damage|p1a: Rascals|6/100\n|-enditem|p1a: Rascals|Salac Berry|[eat]\n|-boost|p1a: Rascals|spe|1|[from] item: Salac Berry\n|move|p1a: Rascals|Thunderbolt|p2a: Gengar\n|-damage|p2a: Gengar|12/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Gengar|6/100|[from] Sandstorm\n|-heal|p2a: Gengar|12/100|[from] item: Leftovers\n|\n|turn|53\n|move|p1a: Rascals|Thunderbolt|p2a: Gengar\n|-damage|p2a: Gengar|0 fnt\n|faint|p2a: Gengar\n|\n|win|#pkmn cup champ sir", "source": "https://pastebin.com/f8Cmeicx", "names": {"#pkmn cup champ sir": "Sir", "DracoMalfoy": "DracoMalfoy"}, "native": null, "first_turn": 1, "cut": null}, {"id": "uj0TgvZf", "section": "Finals", "title": "Sir vs. DarkLoic", "players": ["[sky] sir", "Alf"], "pov": null, "turns": 22, "result": "win", "winner": "[sky] sir", "teams": [[{"nick": "Tyranitar", "species": "Tyranitar"}, {"nick": "Swampert", "species": "Swampert"}, {"nick": "Snorlax", "species": "Snorlax"}, {"nick": "Salamence", "species": "Salamence"}, {"nick": "Aerodactyl", "species": "Aerodactyl"}, {"nick": "Camerupt", "species": "Camerupt"}], [{"nick": "Salamence", "species": "Salamence"}, {"nick": "Suicune", "species": "Suicune"}, {"nick": "Snorlax", "species": "Snorlax"}, {"nick": "Metagross", "species": "Metagross"}, {"nick": "Jirachi", "species": "Jirachi"}, {"nick": "Dugtrio", "species": "Dugtrio"}]], "log": "|gametype|singles\n|player|p1|[sky] sir|lucas|\n|player|p2|Alf|dawn|\n|teamsize|p1|6\n|teamsize|p2|6\n|gen|3\n|tier|[Gen 3] OU\n|rule|Sleep Clause Mod: Limit one foe put to sleep\n|rule|Freeze Clause Mod: Limit one foe frozen\n|rule|Species Clause: Limit one of each Pokémon\n|rule|Self-KO Clause: If both Pokémon faint from a self-KO move, the user loses\n|\n|start\n|switch|p1a: Tyranitar|Tyranitar|100/100\n|switch|p2a: Salamence|Salamence|100/100\n|-weather|Sandstorm|[from] ability: Sand Stream|[of] p1a: Tyranitar\n|\n|turn|1\n|switch|p1a: Swampert|Swampert|100/100\n|move|p2a: Salamence|Brick Break|p1a: Swampert\n|-damage|p1a: Swampert|69/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Salamence|94/100|[from] Sandstorm\n|-heal|p1a: Swampert|75/100|[from] item: Leftovers\n|\n|turn|2\n|switch|p2a: Suicune|Suicune|100/100\n|-ability|p2a: Suicune|Pressure\n|move|p1a: Swampert|Surf|p2a: Suicune\n|-resisted|p2a: Suicune\n|-damage|p2a: Suicune|87/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Suicune|81/100|[from] Sandstorm\n|-heal|p2a: Suicune|87/100|[from] item: Leftovers\n|-heal|p1a: Swampert|82/100|[from] item: Leftovers\n|\n|turn|3\n|switch|p1a: Snorlax|Snorlax|100/100\n|move|p2a: Suicune|Calm Mind|p2a: Suicune\n|-boost|p2a: Suicune|spa|1\n|-boost|p2a: Suicune|spd|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Suicune|81/100|[from] Sandstorm\n|-damage|p1a: Snorlax|94/100|[from] Sandstorm\n|-heal|p2a: Suicune|87/100|[from] item: Leftovers\n|-heal|p1a: Snorlax|100/100|[from] item: Leftovers\n|\n|turn|4\n|move|p2a: Suicune|Hydro Pump|p1a: Snorlax\n|-damage|p1a: Snorlax|60/100\n|move|p1a: Snorlax|Body Slam|p2a: Suicune\n|-crit|p2a: Suicune\n|-damage|p2a: Suicune|40/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Suicune|34/100|[from] Sandstorm\n|-damage|p1a: Snorlax|54/100|[from] Sandstorm\n|-heal|p2a: Suicune|40/100|[from] item: Leftovers\n|-heal|p1a: Snorlax|60/100|[from] item: Leftovers\n|\n|turn|5\n|move|p2a: Suicune|Hydro Pump|p1a: Snorlax\n|-damage|p1a: Snorlax|19/100\n|move|p1a: Snorlax|Body Slam|p2a: Suicune\n|-damage|p2a: Suicune|14/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Suicune|8/100|[from] Sandstorm\n|-damage|p1a: Snorlax|13/100|[from] Sandstorm\n|-heal|p2a: Suicune|14/100|[from] item: Leftovers\n|-heal|p1a: Snorlax|19/100|[from] item: Leftovers\n|\n|turn|6\n|move|p2a: Suicune|Hydro Pump|p1a: Snorlax\n|-damage|p1a: Snorlax|0 fnt\n|faint|p1a: Snorlax\n|switch|p1a: Salamence|Salamence|100/100\n|-ability|p1a: Salamence|Intimidate|boost\n|-unboost|p2a: Suicune|atk|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Salamence|94/100|[from] Sandstorm\n|-damage|p2a: Suicune|8/100|[from] Sandstorm\n|-heal|p1a: Salamence|100/100|[from] item: Leftovers\n|-heal|p2a: Suicune|14/100|[from] item: Leftovers\n|\n|turn|7\n|move|p1a: Salamence|Hidden Power|p2a: Suicune\n|-damage|p2a: Suicune|0 fnt\n|faint|p2a: Suicune\n|switch|p2a: Salamence|Salamence|94/100\n|-ability|p2a: Salamence|Intimidate|boost\n|-unboost|p1a: Salamence|atk|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Salamence|88/100|[from] Sandstorm\n|-damage|p1a: Salamence|94/100|[from] Sandstorm\n|-heal|p1a: Salamence|100/100|[from] item: Leftovers\n|\n|turn|8\n|switch|p1a: Swampert|Swampert|82/100\n|move|p2a: Salamence|Hidden Power|p1a: Swampert\n|-damage|p1a: Swampert|38/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Salamence|81/100|[from] Sandstorm\n|-heal|p1a: Swampert|44/100|[from] item: Leftovers\n|\n|turn|9\n|switch|p2a: Snorlax|Snorlax|100/100\n|switch|p1a: Tyranitar|Tyranitar|100/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Snorlax|94/100|[from] Sandstorm\n|-heal|p2a: Snorlax|100/100|[from] item: Leftovers\n|\n|turn|10\n|switch|p2a: Metagross|Metagross|100/100\n|move|p1a: Tyranitar|Dragon Dance|p1a: Tyranitar\n|-boost|p1a: Tyranitar|atk|1\n|-boost|p1a: Tyranitar|spe|1\n|-weather|Sandstorm|[upkeep]\n|\n|turn|11\n|switch|p2a: Salamence|Salamence|81/100\n|-ability|p2a: Salamence|Intimidate|boost\n|-unboost|p1a: Tyranitar|atk|1\n|move|p1a: Tyranitar|Dragon Dance|p1a: Tyranitar\n|-boost|p1a: Tyranitar|atk|1\n|-boost|p1a: Tyranitar|spe|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Salamence|75/100|[from] Sandstorm\n|\n|turn|12\n|move|p1a: Tyranitar|Rock Slide|p2a: Salamence\n|-supereffective|p2a: Salamence\n|-damage|p2a: Salamence|0 fnt\n|faint|p2a: Salamence\n|switch|p2a: Jirachi|Jirachi|100/100\n|-weather|Sandstorm|[upkeep]\n|\n|turn|13\n|move|p1a: Tyranitar|Earthquake|p2a: Jirachi\n|-supereffective|p2a: Jirachi\n|-damage|p2a: Jirachi|20/100\n|move|p2a: Jirachi|Reflect|p2a: Jirachi\n|-sidestart|p2: Alf|Reflect\n|-weather|Sandstorm|[upkeep]\n|-heal|p2a: Jirachi|26/100|[from] item: Leftovers\n|\n|turn|14\n|move|p1a: Tyranitar|Dragon Dance|p1a: Tyranitar\n|-boost|p1a: Tyranitar|atk|1\n|-boost|p1a: Tyranitar|spe|1\n|move|p2a: Jirachi|Thunder|p1a: Tyranitar\n|-damage|p1a: Tyranitar|69/100\n|-weather|Sandstorm|[upkeep]\n|-heal|p1a: Tyranitar|75/100|[from] item: Leftovers\n|-heal|p2a: Jirachi|32/100|[from] item: Leftovers\n|\n|turn|15\n|move|p1a: Tyranitar|Earthquake|p2a: Jirachi\n|-supereffective|p2a: Jirachi\n|-damage|p2a: Jirachi|0 fnt\n|faint|p2a: Jirachi\n|switch|p2a: Metagross|Metagross|100/100\n|-weather|Sandstorm|[upkeep]\n|-heal|p1a: Tyranitar|82/100|[from] item: Leftovers\n|\n|turn|16\n|move|p1a: Tyranitar|Earthquake|p2a: Metagross\n|-supereffective|p2a: Metagross\n|-damage|p2a: Metagross|41/100\n|move|p2a: Metagross|Meteor Mash|p1a: Tyranitar\n|-supereffective|p1a: Tyranitar\n|-damage|p1a: Tyranitar|0 fnt\n|faint|p1a: Tyranitar\n|switch|p1a: Aerodactyl|Aerodactyl|100/100\n|-weather|Sandstorm|[upkeep]\n|-heal|p2a: Metagross|47/100|[from] item: Leftovers\n|\n|turn|17\n|move|p1a: Aerodactyl|Earthquake|p2a: Metagross\n|-supereffective|p2a: Metagross\n|-damage|p2a: Metagross|9/100\n|move|p2a: Metagross|Agility|p2a: Metagross\n|-boost|p2a: Metagross|spe|2\n|-sideend|p2: Alf|Reflect\n|-weather|Sandstorm|[upkeep]\n|-heal|p2a: Metagross|16/100|[from] item: Leftovers\n|\n|turn|18\n|move|p2a: Metagross|Meteor Mash|p1a: Aerodactyl\n|-supereffective|p1a: Aerodactyl\n|-damage|p1a: Aerodactyl|0 fnt\n|faint|p1a: Aerodactyl\n|switch|p1a: Swampert|Swampert|44/100\n|-weather|Sandstorm|[upkeep]\n|-heal|p2a: Metagross|22/100|[from] item: Leftovers\n|-heal|p1a: Swampert|50/100|[from] item: Leftovers\n|\n|turn|19\n|move|p2a: Metagross|Explosion|p1a: Swampert\n|-damage|p1a: Swampert|0 fnt\n|faint|p1a: Swampert\n|faint|p2a: Metagross\n|switch|p1a: Camerupt|Camerupt|100/100\n|switch|p2a: Snorlax|Snorlax|100/100\n|-weather|Sandstorm|[upkeep]\n|-damage|p2a: Snorlax|94/100|[from] Sandstorm\n|-heal|p2a: Snorlax|100/100|[from] item: Leftovers\n|\n|turn|20\n|move|p1a: Camerupt|Explosion|p2a: Snorlax\n|-damage|p2a: Snorlax|0 fnt\n|faint|p2a: Snorlax\n|faint|p1a: Camerupt\n|switch|p1a: Salamence|Salamence|100/100\n|switch|p2a: Dugtrio|Dugtrio|100/100\n|-ability|p1a: Salamence|Intimidate|boost\n|-unboost|p2a: Dugtrio|atk|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Salamence|94/100|[from] Sandstorm\n|-heal|p1a: Salamence|100/100|[from] item: Leftovers\n|\n|turn|21\n|move|p2a: Dugtrio|Rock Slide|p1a: Salamence\n|-supereffective|p1a: Salamence\n|-damage|p1a: Salamence|55/100\n|move|p1a: Salamence|Dragon Dance|p1a: Salamence\n|-boost|p1a: Salamence|atk|1\n|-boost|p1a: Salamence|spe|1\n|-weather|Sandstorm|[upkeep]\n|-damage|p1a: Salamence|49/100|[from] Sandstorm\n|-heal|p1a: Salamence|55/100|[from] item: Leftovers\n|\n|turn|22\n|move|p1a: Salamence|Hidden Power|p2a: Dugtrio\n|-crit|p2a: Dugtrio\n|-damage|p2a: Dugtrio|0 fnt\n|faint|p2a: Dugtrio\n|\n|win|[sky] sir", "source": "https://pastebin.com/uj0TgvZf", "names": {"[sky] sir": "Sir", "Alf": "DarkLoic"}, "native": null, "first_turn": 1, "cut": null}]</script>
+<script type="text/plain" class="battle-log-data"></script>
+</head>
+<body>
+<div class="layout">
+  <nav class="games">
+    <header>
+      <h1>SPL IV &middot; ADV OU</h1>
+      <p class="seasons"><strong>SPL IV</strong> &middot; <a href="../spl5_adv_replays/">SPL V</a> &middot; <a href="../spl6_adv_replays/">SPL VI</a> &middot; <a href="../spl7_adv_replays/">SPL VII</a> &middot; <a href="../spl8_adv_replays/">SPL VIII</a> &middot; <a href="../spl9_adv_replays/">SPL IX</a> &middot; <a href="../spl10_adv_replays/">SPL X</a> &middot; <a href="../spl11_adv_replays/">SPL XI</a> &middot; <a href="../spl12_adv_replays/">SPL XII</a> &middot; <a href="../spl13_adv_replays/">SPL XIII</a> &middot; <a href="../spl14_adv_replays/">SPL XIV</a> &middot; <a href="../spl15_adv_replays/">SPL XV</a> &middot; <a href="../spl16_adv_replays/">SPL XVI</a> &middot; <a href="../spl17_adv_replays/">SPL XVII</a></p>
+      <input class="filter" id="filter" type="search" placeholder="Filter by player or Pok&eacute;mon" aria-label="Filter games">
+    </header>
+    <div id="list"></div>
+  </nav>
+  <main>
+    <div id="info"></div>
+    <div class="wrapper replay-wrapper"><div class="battle"></div><div class="battle-log"></div><div class="replay-controls"></div><div class="replay-controls-2"></div></div>
+  </main>
+</div>
+<script src="../showdown_play_local/play/js/replay-embed.js"></script>
+<script>
+(function () {
+  var GAMES = JSON.parse(document.getElementById('spl-games').textContent);
+  var NO_LOG = [];
+  var byId = {};
+  GAMES.forEach(function (g, i) { g.index = i; byId[g.id] = g; });
+  var current = null, speed = null;
+
+  // A "Last turn" button that jumps to the start of the game's final turn (user 2026-11-16). Showdown's own
+  // "Last turn" button steps back one turn, so it is relabelled "Previous turn". The player redraws its buttons on
+  // every play/pause (Replays.update), so they are adjusted after each redraw; a button's data-action names the
+  // Replays method it calls.
+  Replays.lastturn = function () {
+    if (this.battle && current) this.battle.seekTurn(current.turns);
+  };
+  var showdownUpdate = Replays.update;
+  Replays.update = function (state) {
+    showdownUpdate.call(this, state);
+    var $c = this.$('.replay-controls');
+    $c.find('button[data-action="rewind"]').html('<i class="fa fa-step-backward"></i> Previous turn');
+    if (!$c.find('button[data-action="lastturn"]').length) {
+      $c.find('button[data-action="ff"]').after('<button data-action="lastturn"><i class="fa fa-fast-forward"></i> Last turn</button>');
+    }
+  };
+
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) {
+    return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]; }); }
+  // The list shows each game's title only: no turns, no result (user 2026-11-16)
+  function buildList() {
+    var html = '', section = null;
+    var order = [];
+    GAMES.forEach(function (g) { if (order.indexOf(g.section) < 0) order.push(g.section); });
+    order.forEach(function (sec) {
+      html += '<div class="week" data-sec="' + esc(sec) + '"><h2>' + esc(sec) + '</h2>';
+      GAMES.filter(function (g) { return g.section === sec; }).forEach(function (g) {
+        var hay = (g.title + ' ' + g.players.join(' ') + ' ' + g.teams.map(function (t) {
+          return t.map(function (m) { return (m.species || '') + ' ' + m.nick; }).join(' '); }).join(' ')).toLowerCase();
+        html += '<button class="game" data-id="' + g.id + '" data-hay="' + esc(hay) + '">' +
+          '<span class="t">' + esc(g.title) + '</span></button>';
+      });
+      NO_LOG.filter(function (n) { return n[0] === sec; }).forEach(function (n) {
+        html += '<div class="nolog">' + esc(n[1]) + ' &mdash; ' + esc(n[2]) + '</div>';
+      });
+      html += '</div>';
+    });
+    document.getElementById('list').innerHTML = html;
+    document.getElementById('list').addEventListener('click', function (e) {
+      var b = e.target.closest('.game');
+      if (b) select(b.getAttribute('data-id'), true);
+    });
+    document.getElementById('filter').addEventListener('input', function () {
+      var q = this.value.trim().toLowerCase();
+      document.querySelectorAll('.game').forEach(function (b) {
+        b.style.display = !q || b.getAttribute('data-hay').indexOf(q) >= 0 ? '' : 'none';
+      });
+    });
+  }
+
+  // Above the player: the game's title and a link to the original log or replay, nothing else (user 2026-11-16)
+  function info(g) {
+    var srcLabel = 'original log on pastebin';
+    if (g.native) {
+      srcLabel = g.source.indexOf('replay.pokemonshowdown.com') >= 0 ? 'original replay on Showdown'
+        : 'replay file saved from Showdown (Mediafire)';
+    }
+    var prev = GAMES[g.index - 1], next = GAMES[g.index + 1];
+    var h = '<h2>' + esc(g.section) + ' &middot; ' + esc(g.title) + '</h2>' +
+      '<p class="meta"><a href="' + esc(g.source) + '" target="_blank" rel="noopener">' + srcLabel + '</a></p>' +
+      '<div class="nav"><button data-go="' + (prev ? prev.id : '') + '"' + (prev ? '' : ' disabled') + '>&larr; Previous game</button>' +
+      '<button data-go="' + (next ? next.id : '') + '"' + (next ? '' : ' disabled') + '>Next game &rarr;</button></div>';
+    var el = document.getElementById('info');
+    el.innerHTML = h;
+    el.querySelectorAll('button[data-go]').forEach(function (b) {
+      b.addEventListener('click', function () { if (b.getAttribute('data-go')) select(b.getAttribute('data-go'), true); });
+    });
+    document.querySelectorAll('.game').forEach(function (b) {
+      b.classList.toggle('sel', b.getAttribute('data-id') === g.id);
+    });
+  }
+
+  function select(id, user) {
+    var g = byId[id] || GAMES[0];
+    if (current === g) return;
+    current = g;
+    if (user && history.replaceState) history.replaceState(null, '', '#' + g.id);
+    info(g);
+    loadBattle(0);
+  }
+
+  // (Re)start Showdown's player on the current game's log, optionally at a turn
+  function loadBattle(turn) {
+    $('script.battle-log-data').text(current.log);
+    if (!Replays.battle) return;
+    // keep the viewer's speed choice across reloads
+    var sel = $('.speedchooser button.sel').val();
+    if (sel) speed = sel;
+    try { Replays.battle.pause(); Replays.battle.destroy(); } catch (e) {}
+    Replays.$el.off();
+    Replays.$el.html('<div class="battle"></div><div class="battle-log"></div><div class="replay-controls"></div><div class="replay-controls-2"></div>');
+    Replays.battle = null;
+    Replays.init();
+    if (speed && speed !== 'normal') Replays.changeSetting('speed', speed);
+    if (document.body.classList.contains('dark')) Replays.changeSetting('color', 'dark');
+    if (turn) Replays.battle.seekTurn(turn);
+  }
+
+  // A species the log never names (the converter writes "Missingno.", which has no Gen 3 sprite) is drawn with
+  // the substitute sprite instead of a broken image.
+  function patchSprites() {
+    var orig = Dex.getSpriteData.bind(Dex);
+    Dex.getSpriteData = function (pokemon, isFront, options) {
+      var d = orig(pokemon, isFront, options);
+      var name = (pokemon && pokemon.getSpeciesForme) ? pokemon.getSpeciesForme() : pokemon;
+      var sp = Dex.species.get(name);
+      if (!sp.exists || !(sp.num > 0)) {
+        d.url = Dex.resourcePrefix + 'sprites/gen3' + (isFront ? '' : '-back') + '/substitute.png';
+        d.w = 96; d.h = 96;
+      }
+      return d;
+    };
+  }
+
+  buildList();
+  var first = (location.hash || '').slice(1);
+  var initial = byId[first] || GAMES[0];
+  current = null;
+  // replay-embed.js starts the player on window load from script.battle-log-data: fill it first
+  info(initial);
+  current = initial;
+  document.querySelector('script.battle-log-data').textContent = initial.log;
+  var embedInit = window.onload;
+  window.onload = function () {
+    patchSprites();
+    embedInit();
+    var b = document.querySelector('.game.sel');
+    if (b && b.scrollIntoView) b.scrollIntoView({block: 'center'});
+  };
+  window.addEventListener('hashchange', function () {
+    var id = location.hash.slice(1);
+    if (byId[id]) select(id, false);
+  });
+})();
+</script>
+</body>
+</html>
