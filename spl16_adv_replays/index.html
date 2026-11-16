@@ -42,6 +42,8 @@
   #info .nav button { font: inherit; font-size: 12px; padding: 3px 9px; cursor: pointer; border-radius: 4px;
                       border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
   #info .nav button:disabled { opacity: .45; cursor: default; }
+  /* The game list can be collapsed (user 2026-11-16): the sidebar on wide screens, the list on top on phones */
+  body.nav-collapsed nav.games { display: none; }
   .wrapper.replay-wrapper { max-width: 1180px; margin: 0; }
   @media (max-width: 900px) {
     .layout { display: block; }
@@ -66,7 +68,7 @@
 </head>
 <body>
 <div class="layout">
-  <nav class="games">
+  <nav class="games" id="gameslist">
     <header>
       <h1>SPL XVI &middot; ADV OU</h1>
       <p class="seasons"><a href="../spl4_adv_replays/">SPL IV</a> &middot; <a href="../spl5_adv_replays/">SPL V</a> &middot; <a href="../spl6_adv_replays/">SPL VI</a> &middot; <a href="../spl7_adv_replays/">SPL VII</a> &middot; <a href="../spl8_adv_replays/">SPL VIII</a> &middot; <a href="../spl9_adv_replays/">SPL IX</a> &middot; <a href="../spl10_adv_replays/">SPL X</a> &middot; <a href="../spl11_adv_replays/">SPL XI</a> &middot; <a href="../spl12_adv_replays/">SPL XII</a> &middot; <a href="../spl13_adv_replays/">SPL XIII</a> &middot; <a href="../spl14_adv_replays/">SPL XIV</a> &middot; <a href="../spl15_adv_replays/">SPL XV</a> &middot; <strong>SPL XVI</strong> &middot; <a href="../spl17_adv_replays/">SPL XVII</a></p>
@@ -87,6 +89,25 @@
   var byId = {};
   GAMES.forEach(function (g, i) { g.index = i; byId[g.id] = g; });
   var current = null, speed = null;
+
+  // Collapsing the game list: a "Hide games" / "Show games" button beside Previous/Next; the choice is remembered
+  // in this browser (a convenience only, so a blocked storage just means it starts expanded)
+  var navCollapsed = false;
+  try { navCollapsed = localStorage.getItem('spl-games-list-collapsed') === '1'; } catch (e) {}
+  function applyNav() {
+    document.body.classList.toggle('nav-collapsed', navCollapsed);
+    var b = document.getElementById('navtoggle');
+    if (b) {
+      b.setAttribute('aria-expanded', String(!navCollapsed));
+      b.innerHTML = '<i class="fa fa-bars"></i> ' + (navCollapsed ? 'Show games' : 'Hide games');
+    }
+    if (window.Replays && Replays.battle) fitBattle();   // the player's width changed
+  }
+  function toggleNav() {
+    navCollapsed = !navCollapsed;
+    try { localStorage.setItem('spl-games-list-collapsed', navCollapsed ? '1' : '0'); } catch (e) {}
+    applyNav();
+  }
 
   // A "Last turn" button that jumps to the start of the game's final turn (user 2026-11-16). Showdown's own
   // "Last turn" button steps back one turn, so it is relabelled "Previous turn". The player redraws its buttons on
@@ -148,10 +169,13 @@
     var prev = GAMES[g.index - 1], next = GAMES[g.index + 1];
     var h = '<h2>' + esc(g.section) + ' &middot; ' + esc(g.title) + '</h2>' +
       '<p class="meta"><a href="' + esc(g.source) + '" target="_blank" rel="noopener">' + srcLabel + '</a></p>' +
-      '<div class="nav"><button data-go="' + (prev ? prev.id : '') + '"' + (prev ? '' : ' disabled') + '>&larr; Previous game</button>' +
+      '<div class="nav"><button id="navtoggle" aria-controls="gameslist"></button>' +
+      '<button data-go="' + (prev ? prev.id : '') + '"' + (prev ? '' : ' disabled') + '>&larr; Previous game</button>' +
       '<button data-go="' + (next ? next.id : '') + '"' + (next ? '' : ' disabled') + '>Next game &rarr;</button></div>';
     var el = document.getElementById('info');
     el.innerHTML = h;
+    document.getElementById('navtoggle').addEventListener('click', toggleNav);
+    applyNav();
     el.querySelectorAll('button[data-go]').forEach(function (b) {
       b.addEventListener('click', function () { if (b.getAttribute('data-go')) select(b.getAttribute('data-go'), true); });
     });
